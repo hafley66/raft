@@ -1,3 +1,3 @@
-module Raft0
+module Raft
   VERSION = "0.1.0"
 end
