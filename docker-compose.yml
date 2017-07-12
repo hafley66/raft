@@ -1,0 +1,21 @@
+version: "2"
+
+volumes:
+  app-gems:
+    driver: local
+
+services:
+  raft:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: /usr/src/app/development-entrypoint
+    image: hafley/raft
+    command: guard
+    volumes:
+      - .:/usr/src/app
+
+    stdin_open: true
+    tty: true
+    environment:
+      RAILS_ENV: development
