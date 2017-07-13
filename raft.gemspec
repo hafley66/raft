@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   dev = ->(name, *reqs) {
     spec.add_development_dependency name, *reqs
   }
-  spec.name          = "raft0"
+  spec.name          = "raft"
   spec.version       = "0.1.0"
   spec.authors       = ["Chris Hafley"]
   spec.email         = ["dch66@case.edu"]
@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   end
 
   spec.files = `git ls-files -z`.split("\x0").reject { |f|
-    f.match(%r{^(test|spec|features|dev\.Dockerfile|docker-compose.yml)/})
+    f.match(%r{^(test|spec|features|dev\.Dockerfile|docker-compose.yml|Dockerfile)/})
   }
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }

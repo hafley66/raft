@@ -1,0 +1,2 @@
+class Type::Definition
+end
