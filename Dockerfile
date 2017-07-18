@@ -8,5 +8,3 @@ COPY Gemfile* $HOME/
 COPY *.gemspec $HOME/
 RUN bundle install && bundle binstub guard
 ADD . $HOME
-
-CMD guard

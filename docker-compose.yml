@@ -1,5 +1,6 @@
 version: "2"
 
+# Allows shared cache of bundler downloads
 volumes:
   app-gems:
     driver: local
