@@ -23,6 +23,36 @@
 #                          installed the spring binstubs per the docs)
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
+AsRbFile = ->(path) {
+  if(path !~ /\.rb$/)
+    "#{path}.rb"
+  else
+    path
+  end
+}
+
+RequireAllAuto = ->(prefix, path){
+  path = File.join(prefix, path)
+  if(path != '.')
+    rb_file = File.oAsRbFile.(path)
+    if(!File.exists?(rb_file))
+      File.new(rb_file, "rw")
+    end
+
+  else
+
+  end
+}
+
+
+
+
+guard :shell do
+  prefix = "#{__dir__}lib/"
+  watch(%r{^#{prefix}(.+)$})     { |m|
+    m[1].split("/").map(&:capitalize).join("::")
+  }
+end
 guard :rspec, cmd: 'rspec' do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }

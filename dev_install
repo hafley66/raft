@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+echo "A"
+docker build -t hafley/raft ./
+echo "B"
+docker-compose up -d
+docker-compose logs -f

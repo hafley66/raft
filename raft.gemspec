@@ -34,10 +34,12 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+
   dev.("bundler", "~> 1.13")
   dev.("rake", "~> 10.0")
   dev.("rspec" ,'~> 3.5')
   dev.('listen', '~> 3.0.5')
   dev.('guard-rspec', '~> 4.6')
+  dev.("guard-shell")
   gem.('attr_extras')
 end

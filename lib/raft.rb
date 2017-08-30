@@ -1,4 +1,4 @@
 require "raft/version"
+require "raft/type"
 module Raft
-  # Your code goes here...
 end
